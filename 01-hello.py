@@ -74,5 +74,6 @@ print(a ** b)   # exponentiation: 2^3
 sample_str = "this is a string"
 sample_str[0] = 'T'
 # TypeError: 'str' object does not support item assignment
+# string is a immutable data type
 
 print(sample_str)
