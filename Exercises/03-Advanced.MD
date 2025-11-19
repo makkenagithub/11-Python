@@ -37,6 +37,7 @@ elif args.action == "restart":
 """
 18. Detect Config Drift
 """
+```
 import yaml
 import json
 
@@ -74,8 +75,11 @@ if errors > 5:
 else:
     print("Rolling forward...")
     deploy(100)
-
+```
+"""
 20. Prometheus Metrics Extractor
+"""
+```
 import requests
 
 def push_metric(name, value):
