@@ -36,7 +36,7 @@ if usage_percent > 80:
 
 ```
 
-or bu using psutil
+or by using psutil
 ```
 import psutil
 
@@ -46,6 +46,32 @@ print("Total:", disk.total / (1024**3), "GB")
 print("Used:", disk.used / (1024**3), "GB")
 print("Free:", disk.free / (1024**3), "GB")
 print("Percentage:", disk.percent, "%")
+```
+
+TO check FS usage of each file system mount
+
+```
+import psutil
+
+def show_disk_usage(path='/'):
+    """
+    Prints disk usage statistics for the given path.
+    """
+    usage = psutil.disk_usage(path)
+    
+    print(f"Disk Usage for '{path}':")
+    print(f"  Total: {usage.total / (1024**3):.2f} GB")
+    print(f"  Used: {usage.used / (1024**3):.2f} GB")
+    print(f"  Free: {usage.free / (1024**3):.2f} GB")
+    print(f"  Usage: {usage.percent}%\n")
+
+# Check root filesystem
+show_disk_usage('/')
+
+# Optional: check other mounted directories
+mount_points = [partition.mountpoint for partition in psutil.disk_partitions()]
+for mount in mount_points:
+    show_disk_usage(mount)
 ```
 
 """
