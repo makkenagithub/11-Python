@@ -36,6 +36,18 @@ if usage_percent > 80:
 
 ```
 
+or bu using psutil
+```
+import psutil
+
+disk = psutil.disk_usage('/')
+
+print("Total:", disk.total / (1024**3), "GB")
+print("Used:", disk.used / (1024**3), "GB")
+print("Free:", disk.free / (1024**3), "GB")
+print("Percentage:", disk.percent, "%")
+```
+
 """
 3. Ping Servers from File
 
