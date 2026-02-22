@@ -74,6 +74,24 @@ for mount in mount_points:
     show_disk_usage(mount)
 ```
 
+### file having columns of datat and in 2nd column a number exists. Find the average / max  of numbers in second column
+```
+input="C:\\Users\\MakkenaSuresh\\Desktop\\test\\FEB22_Python\\logs.txt"
+l=[]
+with open(input, "r") as f:
+    for line in f:
+        column = line.strip().split()
+        l.append(int(column[1]))
+
+print(l)
+average= sum(l)/len(l)
+print(f"average = {average:.2f}")
+print(f"max of l = {max(l)}")
+print(f"min of l = {min(l)}")
+
+```
+
+
 """
 3. Ping Servers from File
 
