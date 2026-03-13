@@ -105,7 +105,19 @@ print(f"max of l = {max(l)}")
 print(f"min of l = {min(l)}")
 
 ```
-
+### read log file log.txt and search for "error" and write error lines to error.txt file
+```
+input_file = "C:\\Users\\MakkenaSuresh\\Desktop\\test\\FEB22_Python\\logs.txt"
+output_file = "C:\\Users\\MakkenaSuresh\\Desktop\\test\\FEB22_Python\\error.txt"
+with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+    for line in infile.readlines():
+        if "error" in line:
+            print(f"{line}")
+            outfile.write(line)
+        elif "ERROR" in line:
+            print(f"{line}")
+            outfile.write(line)
+```
 
 """
 3. Ping Servers from File
