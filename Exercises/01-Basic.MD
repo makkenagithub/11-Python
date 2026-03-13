@@ -267,12 +267,17 @@ with open("inventory.csv") as f:
     reader = csv.DictReader(f)
     for row in reader:
         servers.append(row)
-
+print(f"{servers}")
 with open("inventory.json", "w") as f:
     json.dump(servers, f, indent=4)
 
 print("Converted CSV to JSON")
 ```
+example output of servers:
+```
+[{'NAME ': 'erw', 'VALUE': '90'}, {'NAME ': 'rwe', 'VALUE': '3'}, {'NAME ': 'wre', 'VALUE': '879'}, {'NAME ': 'rwewre', 'VALUE': '90'}, {'NAME ': 'ew', 'VALUE': '98'}, {'NAME ': 'rwe', 'VALUE': '78'}, {'NAME ': 'wr', 'VALUE': '87'}, {'NAME ': 'gd', 'VALUE': '56'}, {'NAME ': 'g', 'VALUE': '879'}, {'NAME ': 'vb', 'VALUE': '79'}]
+```
+
 """
 10. Basic System Info Script (uptime, memory, hostname)
 
