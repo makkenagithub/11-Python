@@ -74,6 +74,21 @@ for mount in mount_points:
     show_disk_usage(mount)
 ```
 
+or to check FS uase of each FS mount and diplay 80% exceeded FS mounts
+```
+import psutil
+def fs_usage(path):
+    data = psutil.disk_usage(path)
+    usage = data.used *100/data.total
+    if usage > 80:
+        print(f"FS usgae of {path} is {usage}% - exceeded threshold of 80%")
+
+mounts = [partition.mountpoint for partition in psutil.disk_partitions()]
+
+for mount in mounts:
+    fs_usage(mount)
+```
+
 ### file having columns of datat and in 2nd column a number exists. Find the average / max  of numbers in second column
 ```
 input="C:\\Users\\MakkenaSuresh\\Desktop\\test\\FEB22_Python\\logs.txt"
